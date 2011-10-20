@@ -66,7 +66,9 @@
                 }
             });
             $(document).ajaxComplete(function() {
-                $.thead.update();
+                if ('undefined' != typeof $.thead) {
+                    $.thead.update();
+                }
             });
             $('.jquery-thead').thead();
         }
